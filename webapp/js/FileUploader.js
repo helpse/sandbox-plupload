@@ -105,6 +105,7 @@ define([
             deferred.reject(err);
         }
 
+        uploader.init();
         uploader.start();
         return deferred.promise;
     }
