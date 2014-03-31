@@ -85,7 +85,10 @@ define([
 
     function uploadOneFile (settings, fileRef) {
         var uploader = new plupload.Uploader(settings);
-        uploader.files.push(fileRef); // Add the native file object directly into the plupload list of file objects.
+
+        // Abuse private sate -
+        // Add the native file object directly into the plupload list of file objects.
+        uploader.files.push(fileRef);
 
         var deferred = Q.defer();
 
@@ -124,7 +127,7 @@ define([
                 acc.push(response);
                 return ((list.length === 0) ? acc : iterate(_.head(rest), _.tail(rest)));
             });
-        }
+        };
 
         return iterate(_.head(list), _.tail(list));
     }
