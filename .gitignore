@@ -2,3 +2,6 @@
 /webapp/js-built/
 /webapp/styles/App.css
 /webapp/Page.js
+/.idea
+/node_modules
+/bower_components
