@@ -9,7 +9,7 @@ define([
         render: function () {
             return (
                 <div>
-                    <FileUploader url="//" />
+                    <FileUploader url="/" />
                 </div>
             );
         }
