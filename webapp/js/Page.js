@@ -1,15 +1,23 @@
 /** @jsx React.DOM */
 define([
-    'react', 'wingspan-forms'
-], function (React, Forms) {
+    'react', 'wingspan-forms', 'jsx!FileUploader'
+], function (React, Forms, FileUploader) {
     'use strict';
 
-    var FormField = Forms.FormField;
-    var KendoText = Forms.KendoText;
+
+    var App = React.createClass({
+        render: function () {
+            return (
+                <div>
+                    <FileUploader url="//" />
+                </div>
+            );
+        }
+    });
+
 
     function entrypoint() {
-        var jsx = (<div>Hello, JSX Transformer!</div>);
-        React.renderComponent(jsx, document.getElementById('root'));
+        React.renderComponent(<App />, document.getElementById('root'));
     }
 
     return {
