@@ -128,7 +128,7 @@ define([
             var promise = fAsyncEffect(next);
             return promise.fin(function (response) {
                 acc.push(response);
-                return ((list.length === 0) ? acc : iterate(_.head(rest), _.tail(rest)));
+                return ((rest.length === 0) ? acc : iterate(_.head(rest), _.tail(rest)));
             });
         };
 
