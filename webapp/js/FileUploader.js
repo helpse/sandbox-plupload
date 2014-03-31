@@ -108,6 +108,9 @@ define([
             deferred.reject(err);
         }
 
+        uploader.bind('FileUploaded', onFileUploaded);
+        uploader.bind('UploadProgress', onUploadProgress);
+        uploader.bind('Error', onError);
         uploader.init();
         uploader.start();
         return deferred.promise;
