@@ -112,7 +112,7 @@ define([
         uploader.bind('UploadProgress', onUploadProgress);
         uploader.bind('Error', onError);
         uploader.init();
-        uploader.start();
+        setTimeout(_.bind(uploader.start, uploader), 100);
         return deferred.promise;
     }
 
