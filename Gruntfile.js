@@ -79,6 +79,13 @@ module.exports = function (grunt) {
                         src: ['**'],
                         dest: 'webapp/lib/wingspan-forms/',
                         flatten: false
+                    },
+                    {
+                        expand: true,
+                        cwd: 'bower_components/plupload-bower/js/',
+                        src: ['plupload.js', 'plupload.flash.js', 'plupload.flash.swf', 'plupload.html5.js'],
+                        dest: 'webapp/lib/plupload/',
+                        flatten: false
                     }
                 ]
             }
