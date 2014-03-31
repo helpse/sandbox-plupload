@@ -54,6 +54,7 @@ module.exports = function (grunt) {
                             'bower_components/jquery/jquery.js',
                             'bower_components/momentjs/moment.js',
                             'bower_components/underscore/underscore.js',
+                            'bower_components/q/q.js',
                             'bower_components/react/react-with-addons.js',
                             'bower_components/react/JSXTransformer.js',
                             'bower_components/require-jsx/jsx.js',

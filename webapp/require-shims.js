@@ -11,6 +11,7 @@
             'kendo': '../lib/kendo-ui/js/kendo.web',
             'moment': '../lib/moment',
             'react': '../lib/react-with-addons',
+            'q': '../lib/q',
             'plupload': '../lib/plupload/plupload',
             'plupload-flash': '../lib/plupload/plupload.flash',
             'plupload-html5': '../lib/plupload/plupload.html5',
