@@ -80,10 +80,10 @@ define([
             var deferred = Q.defer();
 
             function onFileUploaded (uploader, file, response) {
-                deferred.resolve(response);
                 uploader.unbind('FileUploaded', onFileUploaded);
                 uploader.unbind('UploadProgress', onUploadProgress);
                 uploader.unbind('Error', onError);
+                deferred.resolve(response);
             }
 
             function onUploadProgress(uploader, file) {
