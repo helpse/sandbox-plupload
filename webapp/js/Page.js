@@ -1,6 +1,6 @@
 /** @jsx React.DOM */
 define([
-    'react', 'wingspan-forms', 'jsx!FileUploader'
+    'react', 'wingspan-forms', 'FileUploader'
 ], function (React, Forms, FileUploader) {
     'use strict';
 

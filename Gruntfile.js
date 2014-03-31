@@ -45,6 +45,17 @@ module.exports = function (grunt) {
             }
         },
 
+        react: {
+            options: {
+                extension: 'js'
+            },
+            app: {
+                files: {
+                    'webapp/js-built': 'webapp/js'
+                }
+            }
+        },
+
         copy: {
             'libs': {
                 files: [
@@ -111,5 +122,5 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-copy');
 
-    grunt.registerTask('default', ['bower:install', 'subgrunt', 'copy', 'less']);
+    grunt.registerTask('default', ['bower:install', 'subgrunt', 'copy', 'react', 'less']);
 };
