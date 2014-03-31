@@ -7,10 +7,10 @@ define([
 
 
     var DEFAULT_SETTINGS = {
-        runtimes: 'html5,flash',
+        runtimes: 'flash',
         flash_swf_url: 'lib/plupload/plupload.flash.swf',
         multipart: true,
-        multi_selection: false,
+        multi_selection: true,
         file_data_name: 'file',
         headers: { 'Accept': 'application/json' }
     };
@@ -24,12 +24,19 @@ define([
             };
         },
 
+        getInitialState: function () {
+            return {
+                fileQueue: []
+            };
+        },
+
         render: function () {
             return (
-                <span>
+                <div>
                     <button id="42">Select file...</button>
                     <button onClick={this.onUploadButtonClick}>Upload</button>
-                </span>
+                    <pre>{JSON.stringify(this.state.fileQueue, undefined, 2)}</pre>
+                </div>
             );
         },
 
@@ -41,7 +48,18 @@ define([
             }, DEFAULT_SETTINGS);
 
             this.uploader = new plupload.Uploader(settings);
+            this.uploader.bind('FilesAdded', this.onFilesAdded);
             this.uploader.init();
+        },
+
+        componentWillUnmount: function () {
+            this.uploader.unbind('FilesAdded', this.onFilesAdded);
+        },
+
+        onFilesAdded: function (uploader, files) {
+            this.setState({
+                fileQueue: _.union(this.state.fileQueue, _.pluck(files, 'name'))
+            });
         },
 
         onUploadButtonClick: function () {
