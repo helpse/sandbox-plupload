@@ -83,7 +83,14 @@ module.exports = function (grunt) {
                     {
                         expand: true,
                         cwd: 'bower_components/plupload-bower/js/',
-                        src: ['plupload.js', 'plupload.flash.js', 'plupload.flash.swf', 'plupload.html5.js'],
+                        src: ['plupload.flash.swf'],
+                        dest: 'webapp/lib/plupload/',
+                        flatten: false
+                    },
+                    {
+                        expand: true,
+                        cwd: 'bower_components/plupload/src/javascript/',
+                        src: ['plupload.js', 'plupload.flash.js', 'plupload.html5.js'],
                         dest: 'webapp/lib/plupload/',
                         flatten: false
                     }
